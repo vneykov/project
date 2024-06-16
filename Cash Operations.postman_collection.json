@@ -1,0 +1,213 @@
+{
+	"info": {
+		"_postman_id": "f389e9fe-d049-483e-a86b-fcb579063f3b",
+		"name": "Cash Operations",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23982588"
+	},
+	"item": [
+		{
+			"name": "Withdraw 100BGN",
+			"request": {
+				"auth": {
+					"type": "apikey"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "x-api-key",
+						"value": "f9Uie8nNf112hx8s",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"operationType\": \"withdrawBGN\",\r\n    \"denominations\": [\r\n        {\r\n            \"type\": \"BGN\",\r\n            \"denomination\": 10,\r\n            \"count\": 5\r\n        },\r\n        {\r\n            \"type\": \"BGN\",\r\n            \"denomination\": 50,\r\n            \"count\": 1\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/cash-operation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"cash-operation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Withdraw 500EUR",
+			"request": {
+				"auth": {
+					"type": "apikey"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "x-api-key",
+						"value": "f9Uie8nNf112hx8s",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"operationType\": \"withdrawEUR\",\r\n    \"denominations\": [\r\n        {\r\n            \"type\": \"EUR\",\r\n            \"denomination\": 50,\r\n            \"count\": 10\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/cash-operation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"cash-operation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deposit 600BGN",
+			"request": {
+				"auth": {
+					"type": "apikey"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "x-api-key",
+						"value": "f9Uie8nNf112hx8s",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"operationType\": \"depositBGN\",\r\n    \"denominations\": [\r\n        {\r\n            \"type\": \"BGN\",\r\n            \"denomination\": 10,\r\n            \"count\": 10\r\n        },\r\n        {\r\n            \"type\": \"BGN\",\r\n            \"denomination\": 50,\r\n            \"count\": 10\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/cash-operation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"cash-operation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deposit 200EUR",
+			"request": {
+				"auth": {
+					"type": "apikey"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "x-api-key",
+						"value": "f9Uie8nNf112hx8s",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"operationType\": \"depositEUR\",\r\n    \"denominations\": [\r\n        {\r\n            \"type\" : \"EUR\",\r\n            \"denomination\": 20,\r\n            \"count\": 5\r\n        },\r\n        {\r\n            \"type\" : \"EUR\",\r\n            \"denomination\": 50,\r\n            \"count\": 2\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/cash-operation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"cash-operation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View Balance",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "f9Uie8nNf112hx8s",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/cash-balance",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"cash-balance"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
