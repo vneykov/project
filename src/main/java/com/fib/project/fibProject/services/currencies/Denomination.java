@@ -5,8 +5,9 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 @JsonTypeInfo(
         use = JsonTypeInfo.Id.NAME,
-        include = JsonTypeInfo.As.WRAPPER_OBJECT,
-        property = "type"
+        include = JsonTypeInfo.As.PROPERTY,
+        property = "type",
+        visible = true
 )
 @JsonSubTypes({
         @JsonSubTypes.Type(value = BGN.class, name = "BGN"),

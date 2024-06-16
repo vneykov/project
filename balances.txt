@@ -1,4 +1,2 @@
-Total BGN:1000
- Total EUR:2000
-Total BGN:1000
- Total EUR:2000
+Total BGN:1500
+ Total EUR:2100

@@ -1,16 +1,20 @@
 package com.fib.project.fibProject.controllers;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fib.project.fibProject.services.CashierService;
 import com.fib.project.fibProject.controllers.models.CashBalanceResponse;
 import com.fib.project.fibProject.controllers.models.CashOperationRequest;
+import com.fib.project.fibProject.services.currencies.BGN;
+import com.fib.project.fibProject.services.currencies.Denomination;
+import com.fib.project.fibProject.services.currencies.EUR;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -23,13 +27,11 @@ public class CashierController {
     @Autowired
     Environment environment;
 
-    @PostMapping("/cash-operation")
+    @PostMapping(value = "/cash-operation", consumes = "application/json", produces = "application/json")
     public ResponseEntity<String> cashOperation(@RequestHeader("x-api-key") String apiKey,
                                                 @RequestBody @Valid CashOperationRequest request) {
 
         validateApiKey(apiKey);
-
-        List<?> denominations = request.getDenominations();
 
         switch (request.getOperationType()) {
             case "withdrawBGN":
